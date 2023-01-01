@@ -1,11 +1,15 @@
+repeat task.wait()
+    until game:GetService("ReplicatedStorage").GameData.LatestRoom.Value > 0
+    print("Linked")
+
+while true do
+    wait(1)
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-
-
 -- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "Timothy", -- Custom name of your entity
     Model = "https://github.com/ChronoAccelerator/OtherCollab/blob/main/LinxyCollab/Timothy.rbxm?raw=true", -- Can be GitHub file or rbxassetid
-    Speed = 15, -- Percentage, 100 = default Rush speed
+    Speed = 30, -- Percentage, 100 = default Rush speed
     DelayTime = 2, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
@@ -88,3 +92,4 @@ end
 
 -- Run the created entity
 Spawner.runEntity(entityTable)
+end
